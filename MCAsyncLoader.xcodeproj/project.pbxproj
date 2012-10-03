@@ -18,6 +18,8 @@
 		8686BFB9161BF924004E7798 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8686BFB8161BF924004E7798 /* Default-568h@2x.png */; };
 		8686BFBC161BF924004E7798 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8686BFBB161BF924004E7798 /* ViewController.m */; };
 		8686BFBF161BF924004E7798 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8686BFBD161BF924004E7798 /* ViewController.xib */; };
+		8686BFC8161BF94E004E7798 /* MCAsyncLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8686BFC7161BF94E004E7798 /* MCAsyncLoader.m */; };
+		8686C31F161C7C97006D8E20 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8686C31E161C7C97006D8E20 /* placeholder.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		8686BFBA161BF924004E7798 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8686BFBB161BF924004E7798 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8686BFBE161BF924004E7798 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		8686BFC6161BF94E004E7798 /* MCAsyncLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCAsyncLoader.h; path = Classes/MCAsyncLoader.h; sourceTree = "<group>"; };
+		8686BFC7161BF94E004E7798 /* MCAsyncLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCAsyncLoader.m; path = Classes/MCAsyncLoader.m; sourceTree = "<group>"; };
+		8686C31E161C7C97006D8E20 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 		8686BF93161BF924004E7798 = {
 			isa = PBXGroup;
 			children = (
+				8686C31E161C7C97006D8E20 /* placeholder.jpg */,
 				8686BFA8161BF924004E7798 /* MCAsyncLoader */,
 				8686BFA1161BF924004E7798 /* Frameworks */,
 				8686BF9F161BF924004E7798 /* Products */,
@@ -83,6 +89,7 @@
 		8686BFA8161BF924004E7798 /* MCAsyncLoader */ = {
 			isa = PBXGroup;
 			children = (
+				8686BFC5161BF92E004E7798 /* Classes */,
 				8686BFB1161BF924004E7798 /* AppDelegate.h */,
 				8686BFB2161BF924004E7798 /* AppDelegate.m */,
 				8686BFBA161BF924004E7798 /* ViewController.h */,
@@ -105,6 +112,15 @@
 				8686BFB8161BF924004E7798 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8686BFC5161BF92E004E7798 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8686BFC6161BF94E004E7798 /* MCAsyncLoader.h */,
+				8686BFC7161BF94E004E7798 /* MCAsyncLoader.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +179,7 @@
 				8686BFB7161BF924004E7798 /* Default@2x.png in Resources */,
 				8686BFB9161BF924004E7798 /* Default-568h@2x.png in Resources */,
 				8686BFBF161BF924004E7798 /* ViewController.xib in Resources */,
+				8686C31F161C7C97006D8E20 /* placeholder.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +193,7 @@
 				8686BFAF161BF924004E7798 /* main.m in Sources */,
 				8686BFB3161BF924004E7798 /* AppDelegate.m in Sources */,
 				8686BFBC161BF924004E7798 /* ViewController.m in Sources */,
+				8686BFC8161BF94E004E7798 /* MCAsyncLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +309,7 @@
 				8686BFC4161BF924004E7798 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
