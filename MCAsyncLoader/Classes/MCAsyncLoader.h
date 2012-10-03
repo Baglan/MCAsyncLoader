@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #define MC_ASYNC_LOADER_IMAGE_LOADED_AND_PRERENDERED_NOTIFICATION   @"MCAsyncLoaderImageLoadedAndPrerenderedNotification"
+#define MC_ASYNC_LOADER_IMAGE_LOADING_FAILED_NOTIFICATION           @"MCAsyncLoaderImageLoadingFailedNotification"
 
 @interface MCAsyncLoader : NSObject
 

@@ -7,7 +7,7 @@ Create an easy to use asychronous loader based on nitifications.
 ## Installation
 
 1. Drag files from the "Classes" folder to your project;
-2. ''#import "MCAsyncLoader.h"''
+2. #import "MCAsyncLoader.h"
 
 ## Usage
 

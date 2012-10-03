@@ -67,9 +67,15 @@
                                                                     object:key
                                                                   userInfo:@{@"image" : prerenderedImage}];
             });
+            [_imageCache setObject:prerenderedImage forKey:url];
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:MC_ASYNC_LOADER_IMAGE_LOADING_FAILED_NOTIFICATION
+                                                                    object:key
+                                                                  userInfo:nil];
+            });
+            
         }
-        
-        [_imageCache setObject:prerenderedImage forKey:url];
     });
     
     // dispatch_release(downloadQueue);
