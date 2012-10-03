@@ -20,6 +20,7 @@
 		8686BFBF161BF924004E7798 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8686BFBD161BF924004E7798 /* ViewController.xib */; };
 		8686BFC8161BF94E004E7798 /* MCAsyncLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8686BFC7161BF94E004E7798 /* MCAsyncLoader.m */; };
 		8686C31F161C7C97006D8E20 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8686C31E161C7C97006D8E20 /* placeholder.jpg */; };
+		8686C322161C8B51006D8E20 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8686C321161C8B51006D8E20 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		8686BFC6161BF94E004E7798 /* MCAsyncLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCAsyncLoader.h; path = Classes/MCAsyncLoader.h; sourceTree = "<group>"; };
 		8686BFC7161BF94E004E7798 /* MCAsyncLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCAsyncLoader.m; path = Classes/MCAsyncLoader.m; sourceTree = "<group>"; };
 		8686C31E161C7C97006D8E20 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
+		8686C321161C8B51006D8E20 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		8686BF93161BF924004E7798 = {
 			isa = PBXGroup;
 			children = (
+				8686C321161C8B51006D8E20 /* README.md */,
 				8686C31E161C7C97006D8E20 /* placeholder.jpg */,
 				8686BFA8161BF924004E7798 /* MCAsyncLoader */,
 				8686BFA1161BF924004E7798 /* Frameworks */,
@@ -180,6 +183,7 @@
 				8686BFB9161BF924004E7798 /* Default-568h@2x.png in Resources */,
 				8686BFBF161BF924004E7798 /* ViewController.xib in Resources */,
 				8686C31F161C7C97006D8E20 /* placeholder.jpg in Resources */,
+				8686C322161C8B51006D8E20 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
