@@ -10,9 +10,12 @@
 
 #define MC_ASYNC_LOADER_IMAGE_LOADED_AND_PRERENDERED_NOTIFICATION   @"MCAsyncLoaderImageLoadedAndPrerenderedNotification"
 #define MC_ASYNC_LOADER_IMAGE_LOADING_FAILED_NOTIFICATION           @"MCAsyncLoaderImageLoadingFailedNotification"
+#define MC_ASYNC_LOADER_DATA_LOADED_NOTIFICATION                    @"MCAsyncLoaderDataLoadedNotification"
+#define MC_ASYNC_LOADER_DATA_LOADING_FAILED_NOTIFICATION            @"MCAsyncLoaderDataLoadingFailedNotification"
 
 @interface MCAsyncLoader : NSObject
 
 + (void)loadAndPrerenderImageFromURL:(NSURL *)url forKey:(id)key;
++ (void)loadDataFromURL:(NSURL *)url forKey:(id)key;
 
 @end
