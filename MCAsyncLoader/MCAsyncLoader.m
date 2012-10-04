@@ -74,16 +74,40 @@
                                                                     object:key
                                                                   userInfo:nil];
             });
-            
         }
     });
-    
-    // dispatch_release(downloadQueue);
 }
 
 + (void)loadAndPrerenderImageFromURL:(NSURL *)url forKey:(id)key
 {
     [[self sharedInstance] loadAndPrerenderImageFromURL:url forKey:key];
+}
+
+- (void)loadDataFromURL:(NSURL *)url forKey:(id)key
+{
+    dispatch_queue_t downloadQueue = dispatch_queue_create("MCAsyncLoader:loadDataFromURL", NULL);
+    
+    dispatch_async(downloadQueue, ^(void) {
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        if (data) {
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:MC_ASYNC_LOADER_DATA_LOADED_NOTIFICATION
+                                                                    object:key
+                                                                  userInfo:@{@"data" : data}];
+            });
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:MC_ASYNC_LOADER_DATA_LOADING_FAILED_NOTIFICATION
+                                                                    object:key
+                                                                  userInfo:nil];
+            });
+        }
+    });
+}
+
++ (void)loadDataFromURL:(NSURL *)url forKey:(id)key
+{
+    [[self sharedInstance] loadDataFromURL:url forKey:key];
 }
 
 @end
