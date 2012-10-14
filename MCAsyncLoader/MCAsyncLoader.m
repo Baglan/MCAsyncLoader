@@ -37,6 +37,9 @@
     return self;
 }
 
+#pragma mark -
+#pragma mark Image
+
 + (UIImage *)renderImage:(UIImage *)image
 {
     UIGraphicsBeginImageContext(image.size);
@@ -83,6 +86,9 @@
     [[self sharedInstance] loadAndPrerenderImageFromURL:url forKey:key];
 }
 
+#pragma mark -
+#pragma mark Data
+
 - (void)loadDataFromURL:(NSURL *)url forKey:(id)key
 {
     dispatch_queue_t downloadQueue = dispatch_queue_create("MCAsyncLoader:loadDataFromURL", NULL);
@@ -106,6 +112,42 @@
 }
 
 + (void)loadDataFromURL:(NSURL *)url forKey:(id)key
+{
+    [[self sharedInstance] loadDataFromURL:url forKey:key];
+}
+
+#pragma mark -
+#pragma mark JSON
+
+- (void)loadJSONFromURL:(NSURL *)url forKey:(id)key
+{
+    dispatch_queue_t downloadQueue = dispatch_queue_create("MCAsyncLoader:loadJSONFromURL", NULL);
+    
+    dispatch_async(downloadQueue, ^(void) {
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        id json = nil;
+        
+        if (data) {
+            json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        }
+        
+        if (json) {
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:MC_ASYNC_LOADER_DATA_LOADED_NOTIFICATION
+                                                                    object:key
+                                                                  userInfo:@{@"object" : json}];
+            });
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:MC_ASYNC_LOADER_DATA_LOADING_FAILED_NOTIFICATION
+                                                                    object:key
+                                                                  userInfo:nil];
+            });
+        }
+    });
+}
+
++ (void)loadJSONFromURL:(NSURL *)url forKey:(id)key
 {
     [[self sharedInstance] loadDataFromURL:url forKey:key];
 }
