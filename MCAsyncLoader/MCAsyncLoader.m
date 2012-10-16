@@ -16,7 +16,7 @@
 
 @implementation MCAsyncLoader
 
-// Sound board singleton
+// Singleton
 // Taken from http://lukeredpath.co.uk/blog/a-note-on-objective-c-singletons.html
 + (MCAsyncLoader *)sharedInstance
 {

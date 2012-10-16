@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8673B57A161DEEF2009CF8BB /* MCAsyncLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8673B579161DEEF2009CF8BB /* MCAsyncLoader.m */; };
+		86629E79162D4FE30099FD70 /* MCAsyncLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 86629E78162D4FE30099FD70 /* MCAsyncLoader.m */; };
 		8686BFA3161BF924004E7798 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8686BFA2161BF924004E7798 /* UIKit.framework */; };
 		8686BFA5161BF924004E7798 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8686BFA4161BF924004E7798 /* Foundation.framework */; };
 		8686BFA7161BF924004E7798 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8686BFA6161BF924004E7798 /* CoreGraphics.framework */; };
@@ -24,8 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8673B578161DEEF2009CF8BB /* MCAsyncLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAsyncLoader.h; sourceTree = "<group>"; };
-		8673B579161DEEF2009CF8BB /* MCAsyncLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAsyncLoader.m; sourceTree = "<group>"; };
+		86629E77162D4FE30099FD70 /* MCAsyncLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAsyncLoader.h; sourceTree = "<group>"; };
+		86629E78162D4FE30099FD70 /* MCAsyncLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAsyncLoader.m; sourceTree = "<group>"; };
 		8686BF9E161BF924004E7798 /* MCAsyncLoader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCAsyncLoader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8686BFA2161BF924004E7798 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8686BFA4161BF924004E7798 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,8 +120,8 @@
 		8686BFC5161BF92E004E7798 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8673B578161DEEF2009CF8BB /* MCAsyncLoader.h */,
-				8673B579161DEEF2009CF8BB /* MCAsyncLoader.m */,
+				86629E77162D4FE30099FD70 /* MCAsyncLoader.h */,
+				86629E78162D4FE30099FD70 /* MCAsyncLoader.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -205,7 +205,7 @@
 				8686BFAF161BF924004E7798 /* main.m in Sources */,
 				8686BFB3161BF924004E7798 /* AppDelegate.m in Sources */,
 				8686BFBC161BF924004E7798 /* ViewController.m in Sources */,
-				8673B57A161DEEF2009CF8BB /* MCAsyncLoader.m in Sources */,
+				86629E79162D4FE30099FD70 /* MCAsyncLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
