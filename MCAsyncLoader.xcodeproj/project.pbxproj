@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86629E79162D4FE30099FD70 /* MCAsyncLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 86629E78162D4FE30099FD70 /* MCAsyncLoader.m */; };
 		8686BFA3161BF924004E7798 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8686BFA2161BF924004E7798 /* UIKit.framework */; };
 		8686BFA5161BF924004E7798 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8686BFA4161BF924004E7798 /* Foundation.framework */; };
 		8686BFA7161BF924004E7798 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8686BFA6161BF924004E7798 /* CoreGraphics.framework */; };
@@ -21,11 +20,10 @@
 		8686BFBF161BF924004E7798 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8686BFBD161BF924004E7798 /* ViewController.xib */; };
 		8686C322161C8B51006D8E20 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8686C321161C8B51006D8E20 /* README.md */; };
 		8686C328161C8F57006D8E20 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8686C327161C8F57006D8E20 /* placeholder.jpg */; };
+		86F1C398162D514C00AA6ABF /* MCAsyncLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F1C397162D514C00AA6ABF /* MCAsyncLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		86629E77162D4FE30099FD70 /* MCAsyncLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAsyncLoader.h; sourceTree = "<group>"; };
-		86629E78162D4FE30099FD70 /* MCAsyncLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAsyncLoader.m; sourceTree = "<group>"; };
 		8686BF9E161BF924004E7798 /* MCAsyncLoader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCAsyncLoader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8686BFA2161BF924004E7798 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8686BFA4161BF924004E7798 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,6 +42,8 @@
 		8686BFBE161BF924004E7798 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		8686C321161C8B51006D8E20 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		8686C327161C8F57006D8E20 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
+		86F1C396162D514C00AA6ABF /* MCAsyncLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCAsyncLoader.h; path = Classes/MCAsyncLoader.h; sourceTree = SOURCE_ROOT; };
+		86F1C397162D514C00AA6ABF /* MCAsyncLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCAsyncLoader.m; path = Classes/MCAsyncLoader.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +120,8 @@
 		8686BFC5161BF92E004E7798 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				86629E77162D4FE30099FD70 /* MCAsyncLoader.h */,
-				86629E78162D4FE30099FD70 /* MCAsyncLoader.m */,
+				86F1C396162D514C00AA6ABF /* MCAsyncLoader.h */,
+				86F1C397162D514C00AA6ABF /* MCAsyncLoader.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -205,7 +205,7 @@
 				8686BFAF161BF924004E7798 /* main.m in Sources */,
 				8686BFB3161BF924004E7798 /* AppDelegate.m in Sources */,
 				8686BFBC161BF924004E7798 /* ViewController.m in Sources */,
-				86629E79162D4FE30099FD70 /* MCAsyncLoader.m in Sources */,
+				86F1C398162D514C00AA6ABF /* MCAsyncLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
