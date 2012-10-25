@@ -55,12 +55,47 @@
         NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:IMAGE_URL_FORMAT, i]];
         [MCAsyncLoader loadAndPrerenderImageFromURL:imageURL forKey:key];
     }
+    
+    // Loading a large file
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadingStarted:) name:MC_ASYNC_LOADER_PROGRESSIVE_LOADING_STARTED_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadingUpdated:) name:MC_ASYNC_LOADER_PROGRESSIVE_LOADING_UPDATED_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadingFailed:) name:MC_ASYNC_LOADER_PROGRESSIVE_LOADING_FAILED_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadingFinished:) name:MC_ASYNC_LOADER_PROGRESSIVE_LOADING_FINISHED_NOTIFICATION object:nil];
+    
+    NSURL * videoURL = [NSURL URLWithString:@"http://tools.mobicreators.com/video/intro.mp4"];
+    [MCAsyncLoader loadProgressivelyFromURL:videoURL forKey:@"video"];
+    
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark -
+#pragma mark Loading a large file
+
+- (void)loadingStarted:(NSNotification *)notification
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    _loadingStatusLabel.text = @"Started";
+}
+
+- (void)loadingUpdated:(NSNotification *)notification
+{
+    MCAsyncLoaderProgressiveLoadingController * controller = notification.userInfo[@"controller"];
+    int mb = 1024 * 1024;
+    float received = controller.receivedBytes;
+    float expected = controller.response.expectedContentLength;
+    _loadingProgressView.progress = received / expected;
+    _loadingStatusLabel.text = [NSString stringWithFormat:@"%.1f of %.1f Mb", received / mb, expected / mb];
+}
+
+- (void)loadingFinished:(NSNotification *)notification
+{
+    _loadingStatusLabel.text = @"Finished";
+    
+    MCAsyncLoaderProgressiveLoadingController * controller = notification.userInfo[@"controller"];
+    NSString * temporaryFilePath = controller.temporaryFilePath;
+}
+
+- (void)loadingFailed:(NSNotification *)notification
+{
+    _loadingStatusLabel.text = @"Failed";
 }
 
 @end

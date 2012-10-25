@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MCAsyncLoaderProgressiveLoadingController.h"
 
 #define MC_ASYNC_LOADER_IMAGE_LOADED_AND_PRERENDERED_NOTIFICATION   @"MCAsyncLoaderImageLoadedAndPrerenderedNotification"
 #define MC_ASYNC_LOADER_IMAGE_LOADING_FAILED_NOTIFICATION           @"MCAsyncLoaderImageLoadingFailedNotification"
@@ -20,5 +21,7 @@
 + (void)loadAndPrerenderImageFromURL:(NSURL *)url forKey:(id)key;
 + (void)loadDataFromURL:(NSURL *)url forKey:(id)key;
 + (void)loadJSONFromURL:(NSURL *)url forKey:(id)key;
++ (void)loadProgressivelyFromURL:(NSURL *)url forKey:(id)key;
++ (void)cancelProgressiveLoadingForKey:(id)key;
 
 @end

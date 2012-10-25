@@ -9,7 +9,8 @@
 #import "MCAsyncLoader.h"
 
 @interface MCAsyncLoader () {
-    NSCache *_imageCache;
+    NSCache * _imageCache;
+    NSMutableSet * _controllers;
 }
 
 @end
@@ -33,6 +34,9 @@
     self = [super init];
     if (self) {
         _imageCache = [[NSCache alloc] init];
+        _controllers = [NSMutableSet set];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(progressiveLoadingEnded:) name:MC_ASYNC_LOADER_PROGRESSIVE_LOADING_FAILED_NOTIFICATION object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(progressiveLoadingEnded:) name:MC_ASYNC_LOADER_PROGRESSIVE_LOADING_FINISHED_NOTIFICATION object:nil];
     }
     return self;
 }
@@ -150,6 +154,26 @@
 + (void)loadJSONFromURL:(NSURL *)url forKey:(id)key
 {
     [[self sharedInstance] loadDataFromURL:url forKey:key];
+}
+
+#pragma mark -
+#pragma mark Progressive
+
+- (void)progressiveLoadingEnded:(NSNotification *)notification
+{
+    MCAsyncLoaderProgressiveLoadingController * controller = notification.userInfo[@"controller"];
+    [_controllers removeObject:controller];
+}
+
+- (void)loadProgressivelyFromURL:(NSURL *)url forKey:(id)key
+{
+    MCAsyncLoaderProgressiveLoadingController * controller = [[MCAsyncLoaderProgressiveLoadingController alloc] initWithURL:url key:key];
+    [_controllers addObject:controller];
+}
+
++ (void)loadProgressivelyFromURL:(NSURL *)url forKey:(id)key
+{
+    [[self sharedInstance] loadProgressivelyFromURL:url forKey:key];
 }
 
 @end

@@ -71,6 +71,50 @@ Add a method to process notifications:
 Call the loadAndPrerenderImageFromURL:forKey: method:
 
     [MCAsyncLoader loadJSONFromURL:jsonURL forKey:key];
+    
+### Load large files
+
+Register observers for various loading events:
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadingStarted:) name:MC_ASYNC_LOADER_PROGRESSIVE_LOADING_STARTED_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadingUpdated:) name:MC_ASYNC_LOADER_PROGRESSIVE_LOADING_UPDATED_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadingFailed:) name:MC_ASYNC_LOADER_PROGRESSIVE_LOADING_FAILED_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadingFinished:) name:MC_ASYNC_LOADER_PROGRESSIVE_LOADING_FINISHED_NOTIFICATION object:nil];
+
+Implement methods to handle those events. Additional info is available through the notification.userInfo[@"controller"]:
+
+    - (void)loadingStarted:(NSNotification *)notification
+    {
+        // ...
+    }
+
+    - (void)loadingUpdated:(NSNotification *)notification
+    {
+        MCAsyncLoaderProgressiveLoadingController * controller = notification.userInfo[@"controller"];
+        int mb = 1024 * 1024;
+        float received = controller.receivedBytes;
+        float expected = controller.response.expectedContentLength;
+        _loadingProgressView.progress = received / expected;
+        _loadingStatusLabel.text = [NSString stringWithFormat:@"%.1f of %.1f Mb", received / mb, expected / mb];
+    }
+
+    - (void)loadingFinished:(NSNotification *)notification
+    {
+        MCAsyncLoaderProgressiveLoadingController * controller = notification.userInfo[@"controller"];
+        NSString * temporaryFilePath = controller.temporaryFilePath;
+        
+        // Do something with the temporary file
+    }
+
+    - (void)loadingFailed:(NSNotification *)notification
+    {
+        // ...
+    }
+
+Call the +loadProgressivelyFromURL:forKey: method
+
+    NSURL * videoURL = [NSURL URLWithString:@"http://www.example.com/large_file.mp4"];
+    [MCAsyncLoader loadProgressivelyFromURL:videoURL forKey:@"video"];
 
 ## License
 

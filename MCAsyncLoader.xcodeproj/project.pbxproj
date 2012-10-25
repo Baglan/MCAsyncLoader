@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86006D07163859D0009E8FD1 /* MCAsyncLoaderProgressiveLoadingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86006D06163859D0009E8FD1 /* MCAsyncLoaderProgressiveLoadingController.m */; };
 		8686BFA3161BF924004E7798 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8686BFA2161BF924004E7798 /* UIKit.framework */; };
 		8686BFA5161BF924004E7798 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8686BFA4161BF924004E7798 /* Foundation.framework */; };
 		8686BFA7161BF924004E7798 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8686BFA6161BF924004E7798 /* CoreGraphics.framework */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86006D05163859CF009E8FD1 /* MCAsyncLoaderProgressiveLoadingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCAsyncLoaderProgressiveLoadingController.h; path = Classes/MCAsyncLoaderProgressiveLoadingController.h; sourceTree = SOURCE_ROOT; };
+		86006D06163859D0009E8FD1 /* MCAsyncLoaderProgressiveLoadingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCAsyncLoaderProgressiveLoadingController.m; path = Classes/MCAsyncLoaderProgressiveLoadingController.m; sourceTree = SOURCE_ROOT; };
 		8686BF9E161BF924004E7798 /* MCAsyncLoader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCAsyncLoader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8686BFA2161BF924004E7798 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8686BFA4161BF924004E7798 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,8 @@
 			children = (
 				86F1C396162D514C00AA6ABF /* MCAsyncLoader.h */,
 				86F1C397162D514C00AA6ABF /* MCAsyncLoader.m */,
+				86006D05163859CF009E8FD1 /* MCAsyncLoaderProgressiveLoadingController.h */,
+				86006D06163859D0009E8FD1 /* MCAsyncLoaderProgressiveLoadingController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				8686BFB3161BF924004E7798 /* AppDelegate.m in Sources */,
 				8686BFBC161BF924004E7798 /* ViewController.m in Sources */,
 				86F1C398162D514C00AA6ABF /* MCAsyncLoader.m in Sources */,
+				86006D07163859D0009E8FD1 /* MCAsyncLoaderProgressiveLoadingController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

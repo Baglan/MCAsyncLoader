@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController {
     __weak IBOutlet UIScrollView *_scrollView;
+    
+    __weak IBOutlet UIProgressView *_loadingProgressView;
+    __weak IBOutlet UILabel *_loadingStatusLabel;
 }
 
 @end
