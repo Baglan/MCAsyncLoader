@@ -29,6 +29,20 @@
     return self;
 }
 
+- (double)receivedRatio
+{
+    double ratio = 0.0;
+    @try {
+        double received = _receivedBytes;
+        double expected = _response.expectedContentLength;
+        ratio = received / expected;
+    }
+    @catch (NSException *exception) {
+        // Do nothing
+    }
+    return ratio;
+}
+
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     // Save response

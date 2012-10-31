@@ -30,5 +30,6 @@ enum MCAsyncLoaderStatus {
 @property (nonatomic, readonly) long long receivedBytes;
 @property (nonatomic, readonly) NSString * temporaryFilePath;
 @property (nonatomic, readonly) enum MCAsyncLoaderStatus status;
+@property (nonatomic, readonly) double receivedRatio;
 
 @end
